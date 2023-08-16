@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Avatar Generation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            height: 100vh;
+            padding: 20px;
+            background-color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            max-width: 1300px;
+            margin: auto;
+        }
+        #container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            width: 100%;
+            margin: auto;
+        }
+        #uploaded-video {
+            flex-grow: 7;
+            height: 400px;
+            object-fit: cover;
+        }
+        #cwasa-frame {
+            flex-grow: 3;
+            height: 400px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        @media screen and (max-width: 600px) {
+            #container {
+                flex-direction: column;
+                align-items: center;
+            }
+            #uploaded-video, #cwasa-frame {
+                width: 100%;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="mb-4">Automated System for Generation of Avatar for Indian Sign Language using HamNoSys and SiGML</h1>
+    <form method="POST" enctype="multipart/form-data" class="mb-4">
+        <input type="file" name="file" class="mb-2">
+        <input type="submit" class="btn btn-primary">
+    </form>
+    {% if filename %}
+    <div id="container" class="mb-4">
+        <video id="uploaded-video" >
+            <source src="{{ url_for('send_file', filename=filename) }}" type="video/mp4">
+        </video>
+        <iframe id="cwasa-frame" src="{{ url_for('static', filename='cwasa.html') }}" ></iframe>
+    </div>
+    <button id="play-button" class="btn btn-success mb-4">Play Video</button>
+    {% endif %}
+    <script src="{{ url_for('serve_cwasa_js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>
