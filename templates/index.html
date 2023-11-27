@@ -63,6 +63,7 @@
     <div id="container" class="mb-4">
         <video id="uploaded-video" >
             <source src="{{ url_for('send_file', filename=filename) }}" type="video/mp4">
+            <track src="{{ url_for('static', filename='audio-from-video.vtt') }}" kind="subtitles" srclang="en" default />
         </video>
         <iframe id="cwasa-frame" src="{{ url_for('static', filename='cwasa.html') }}" ></iframe>
     </div>
