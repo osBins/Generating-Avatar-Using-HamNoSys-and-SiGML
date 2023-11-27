@@ -92,6 +92,8 @@ def writeSiGML(thisdict, dictGloss):
 			itemNonManual = ET.SubElement(itemGloss, 'hamnosys_nonmanual')
 			itemManual = ET.SubElement(itemGloss, 'hamnosys_manual')
 
+			nonManual = ET.SubElement(itemNonManual, "hnm_mouthpicture")
+			nonManual.set('picture', dictGloss)
 			ET.SubElement(itemManual, thisdict[i][1])
 
 		previousGloss = thisdict[i][0]

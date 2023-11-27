@@ -1,0 +1,6 @@
+.env
+__pycache__
+videos/
+static/audios/
+static/sigml/
+result.txt
