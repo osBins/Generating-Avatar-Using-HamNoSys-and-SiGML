@@ -1,7 +1,7 @@
 import xml.etree.ElementTree as ET
 import xml.dom.minidom 
 
-def readInput(hamNotation, dictGloss):
+def readInput(hamNotation, dictGloss, compound):
 	global data, glosses_sigml, hasGlosses
 
 	data = ET.Element('sigml')
@@ -25,12 +25,12 @@ def readInput(hamNotation, dictGloss):
 
 
 	if hasGlosses:
-		codesList = readLists(glossesList, codesList, dictGloss)	
+		codesList = readLists(glossesList, codesList, dictGloss, compound)	
 	else:
-		codesList = readLists(None, codesList, dictGloss)
+		codesList = readLists(None, codesList, dictGloss, compound)
 
 
-def readLists(glosses, codes, dictGloss):	
+def readLists(glosses, codes, dictGloss, compound):	
 	if hasGlosses:
 		glosses_hamnosys = [(glosses[i], codes[i]) for i in range(0, len(codes))]
 
@@ -46,7 +46,7 @@ def readLists(glosses, codes, dictGloss):
 			readCode(count, aux)	
 			count += 1
 
-	writeSiGML(glosses_sigml, dictGloss)
+	writeSiGML(glosses_sigml, dictGloss, compound)
 
 
 def hamnosysList(codes):
@@ -77,7 +77,7 @@ def readCode(gloss, hamnosys):
 		glosses_sigml.append((gloss, sigmlList[i]))
 
 
-def writeSiGML(thisdict, dictGloss):
+def writeSiGML(thisdict, dictGloss, compound):
 	previousGloss = "null"
 
 	for i in range(0, len(thisdict)):
@@ -92,8 +92,22 @@ def writeSiGML(thisdict, dictGloss):
 			itemNonManual = ET.SubElement(itemGloss, 'hamnosys_nonmanual')
 			itemManual = ET.SubElement(itemGloss, 'hamnosys_manual')
 
-			nonManual = ET.SubElement(itemNonManual, "hnm_mouthpicture")
-			nonManual.set('picture', dictGloss)
+			mouth = ET.SubElement(itemNonManual, "hnm_mouthpicture")
+			brows = ET.SubElement(itemNonManual, "hnm_eyebrows")
+			nose = ET.SubElement(itemNonManual, "hnm_nose")
+			eyes = ET.SubElement(itemNonManual, "hnm_eyelids")
+			mouth.set('picture', dictGloss)
+   
+			if(compound > 0.05):
+				brows.set('tag', "RB")
+				eyes.set('tag', "WB")
+			elif(compound < -0.05):
+				brows.set('tag', 'FU')
+				nose.set('tag', 'WR')
+				eyes.set('tag', 'SB')
+			else:
+				eyes.set('tag', 'BB')
+				
 			ET.SubElement(itemManual, thisdict[i][1])
 
 		previousGloss = thisdict[i][0]

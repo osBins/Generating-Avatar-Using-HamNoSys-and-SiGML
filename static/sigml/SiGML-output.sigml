@@ -3,6 +3,9 @@
 	<hns_sign gloss="sky">
 		<hamnosys_nonmanual>
 			<hnm_mouthpicture picture="sky"/>
+			<hnm_eyebrows/>
+			<hnm_nose/>
+			<hnm_eyelids tag="BB"/>
 		</hamnosys_nonmanual>
 		<hamnosys_manual>
 			<hamsymmlr/>
@@ -40,6 +43,9 @@
 	<hns_sign gloss="blue">
 		<hamnosys_nonmanual>
 			<hnm_mouthpicture picture="blue"/>
+			<hnm_eyebrows/>
+			<hnm_nose/>
+			<hnm_eyelids tag="BB"/>
 		</hamnosys_nonmanual>
 		<hamnosys_manual>
 			<hamsymmlr/>
@@ -77,6 +83,9 @@
 	<hns_sign gloss="clear">
 		<hamnosys_nonmanual>
 			<hnm_mouthpicture picture="clear"/>
+			<hnm_eyebrows tag="RB"/>
+			<hnm_nose/>
+			<hnm_eyelids tag="WB"/>
 		</hamnosys_nonmanual>
 		<hamnosys_manual>
 			<hamsymmlr/>
@@ -96,6 +105,9 @@
 	<hns_sign gloss="i">
 		<hamnosys_nonmanual>
 			<hnm_mouthpicture picture="i"/>
+			<hnm_eyebrows/>
+			<hnm_nose/>
+			<hnm_eyelids tag="BB"/>
 		</hamnosys_nonmanual>
 		<hamnosys_manual>
 			<hamparbegin/>
@@ -126,6 +138,9 @@
 	<hns_sign gloss="want">
 		<hamnosys_nonmanual>
 			<hnm_mouthpicture picture="want"/>
+			<hnm_eyebrows tag="RB"/>
+			<hnm_nose/>
+			<hnm_eyelids tag="WB"/>
 		</hamnosys_nonmanual>
 		<hamnosys_manual>
 			<hamfinger2345/>
@@ -152,6 +167,9 @@
 	<hns_sign gloss="buy">
 		<hamnosys_nonmanual>
 			<hnm_mouthpicture picture="buy"/>
+			<hnm_eyebrows/>
+			<hnm_nose/>
+			<hnm_eyelids tag="BB"/>
 		</hamnosys_nonmanual>
 		<hamnosys_manual>
 			<hamflathand/>
@@ -172,6 +190,9 @@
 	<hns_sign gloss="new">
 		<hamnosys_nonmanual>
 			<hnm_mouthpicture picture="new"/>
+			<hnm_eyebrows/>
+			<hnm_nose/>
+			<hnm_eyelids tag="BB"/>
 		</hamnosys_nonmanual>
 		<hamnosys_manual>
 			<hamflathand/>
@@ -201,6 +222,9 @@
 	<hns_sign gloss="clothes">
 		<hamnosys_nonmanual>
 			<hnm_mouthpicture picture="clothes"/>
+			<hnm_eyebrows/>
+			<hnm_nose/>
+			<hnm_eyelids tag="BB"/>
 		</hamnosys_nonmanual>
 		<hamnosys_manual>
 			<hamsymmlr/>
