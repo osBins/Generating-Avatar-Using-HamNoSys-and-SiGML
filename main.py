@@ -5,6 +5,8 @@ import time
 import os
 import videototext as vt
 
+from sentimentAnalysis import sentimentFinder
+
 def transcribeText(videoName):
     vt.convert_video_to_text(os.path.join("static", videoName), os.path.join("static", "audios", "audio-from-video.wav"))
 
@@ -13,6 +15,7 @@ def convert(videoName):
     
     with open('result.txt') as file:
         data = file.read().split()
+        sentimentFinder(data)
         print(data)
 
     with open(os.path.join("static", "sigml", "SiGML-output.sigml"), "w") as f:
