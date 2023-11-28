@@ -1,1 +1,0 @@
-sentiments = {"the": 0.0, "sky": 0.0, "is": 0.0, "blue": 0.0, "and": 0.0, "clear": 0.3818, "i": 0.0, "want": 0.0772, "to": 0.0, "buy": 0.0, "new": 0.0, "clothes": 0.0}
