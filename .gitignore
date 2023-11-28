@@ -1,0 +1,9 @@
+.env
+__pycache__
+videos/
+result.txt
+sentiments.py
+static/audio-from-video.vtt
+static/sigml/SiGML-output.sigml
+static/sigml/hamnosys-generated
+SiGML-output.sigml

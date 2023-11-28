@@ -96,7 +96,7 @@ def writeSiGML(thisdict, dictGloss, compound):
 			brows = ET.SubElement(itemNonManual, "hnm_eyebrows")
 			nose = ET.SubElement(itemNonManual, "hnm_nose")
 			eyes = ET.SubElement(itemNonManual, "hnm_eyelids")
-			mouth.set('picture', dictGloss)
+			mouth.set('picture', dictGloss[:4])
 
 			if(compound > 0.05):
 				brows.set('tag', "RB")
