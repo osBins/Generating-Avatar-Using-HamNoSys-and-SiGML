@@ -90,7 +90,7 @@ def convert(videoName):
         
         Ham2SIGML.readInput(hamList, i, sentiments[i])
         
-        time.sleep(0.5)
+        time.sleep(0.05)
     with open(os.path.join("static", "sigml", "SiGML-output.sigml"), "a") as f:
         f.write("""\n</sigml>""")
 

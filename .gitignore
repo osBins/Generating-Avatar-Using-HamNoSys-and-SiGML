@@ -1,0 +1,6 @@
+.env
+__pycache__
+videos/
+result.txt
+sentiments.py
+static/audio-from-video.vtt
