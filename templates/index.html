@@ -50,6 +50,16 @@
                 height: 200px;
             }
         }
+        @font-face {
+            font-family: 'Hamnosysunicode';
+            /* src: url('/static/HamNoSysUnicode.ttf') format('truetype'); */
+            src: local(Hamnosysunicode)
+        }
+
+        textarea.form-control {
+            font-family: 'Hamnosysunicode', sans-serif;
+            /* Fallback to sans-serif if HamNoSysUnicode is not available */
+        }
     </style>
 </head>
 
@@ -65,6 +75,9 @@
             <source src="{{ url_for('send_file', filename=filename) }}" type="video/mp4">
         </video>
         <iframe id="cwasa-frame" src="{{ url_for('static', filename='cwasa.html') }}" ></iframe>
+    </div>
+    <div class="container" style="max-width: 1000px; margin: auto;">
+        <textarea name="hamnosys-signs" id="" cols="30" rows="10" class="form-control">{{ textarea_content }}</textarea>
     </div>
     <button id="play-button" class="btn btn-success mb-4">Play Video</button>
     {% endif %}
