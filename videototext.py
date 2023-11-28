@@ -14,6 +14,7 @@ def convert_video_to_text(video_path, audio_path):
     resultFile.write(result['text'].lower().replace(',', '').replace('.', ''))
     resultFile.close()
 
+
 # # Transcribe using Python Speech Recognition Library
 # r = sr.Recognizer()
 # with sr.AudioFile('/audios/audio-from-video.wav') as source:

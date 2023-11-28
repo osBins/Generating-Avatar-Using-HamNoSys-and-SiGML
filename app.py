@@ -22,7 +22,11 @@ def upload_file():
 
         with open(os.path.join('static', 'sigml', 'SiGML-output.sigml'), 'r') as f:
             sigml_text = f.read()
-    return render_template('index.html', filename=uploaded_file.filename, sigml=sigml_text)
+
+        # WRITE CORR. HAMNOSYS
+        with open(os.path.join('static', 'sigml', 'hamnosys-generated'), 'r') as f:
+            textarea_content = f.read()
+    return render_template('index.html', filename=uploaded_file.filename, sigml=sigml_text, textarea_content=textarea_content.encode().decode('unicode_escape'))
 
 @app.route('/videos/<filename>')
 def send_file(filename):
