@@ -77,10 +77,14 @@
         </video>
         <iframe id="cwasa-frame" src="{{ url_for('static', filename='cwasa.html') }}" ></iframe>
     </div>
+    <div style="display: flex; ">
+        <button id="play-button" class="btn btn-success mb-4 mr-4">Play Video</button>
+        <button id="stop-button" class="btn btn-success mb-4">Stop Video</button>
+    </div>
     <div class="container" style="max-width: 1000px; margin: auto;">
         <textarea name="hamnosys-signs" id="" cols="30" rows="10" class="form-control">{{ textarea_content }}</textarea>
     </div>
-    <button id="play-button" class="btn btn-success mb-4">Play Video</button>
+<!--     <button id="play-button" class="btn btn-success mb-4">Play Video</button> -->
     {% endif %}
     <script src="{{ url_for('serve_cwasa_js') }}"></script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
